@@ -1,0 +1,141 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Cabinet Grotesk";
+  src: url("/assets/fonts/CabinetGrotesk-Variable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Satoshi";
+  src: url("/assets/fonts/Satoshi-Variable.woff2") format("woff2");
+  font-weight: 300 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --radius: 0.75rem;
+    /* Vivid eco-green palette — bold and modern */
+    --background: 0.97 0.005 140;
+    --foreground: 0.13 0.02 145;
+    --card: 0.99 0.002 140;
+    --card-foreground: 0.13 0.02 145;
+    --popover: 0.99 0.002 140;
+    --popover-foreground: 0.13 0.02 145;
+    --primary: 0.48 0.19 145;
+    --primary-foreground: 0.99 0 0;
+    --secondary: 0.93 0.018 145;
+    --secondary-foreground: 0.2 0.04 145;
+    --muted: 0.94 0.01 140;
+    --muted-foreground: 0.48 0.04 145;
+    --accent: 0.58 0.22 150;
+    --accent-foreground: 0.99 0 0;
+    --destructive: 0.54 0.22 25;
+    --destructive-foreground: 0.99 0 0;
+    --border: 0.88 0.022 145;
+    --input: 0.88 0.022 145;
+    --ring: 0.48 0.19 145;
+    --chart-1: 0.55 0.22 145;
+    --chart-2: 0.6 0.2 120;
+    --chart-3: 0.52 0.18 170;
+    --chart-4: 0.68 0.24 90;
+    --chart-5: 0.47 0.22 200;
+    --sidebar: 0.97 0.005 140;
+    --sidebar-foreground: 0.13 0.02 145;
+    --sidebar-primary: 0.48 0.19 145;
+    --sidebar-primary-foreground: 0.99 0 0;
+    --sidebar-accent: 0.93 0.018 145;
+    --sidebar-accent-foreground: 0.2 0.04 145;
+    --sidebar-border: 0.88 0.022 145;
+    --sidebar-ring: 0.48 0.19 145;
+  }
+
+  .dark {
+    --background: 0.1 0.015 145;
+    --foreground: 0.95 0.01 140;
+    --card: 0.14 0.018 145;
+    --card-foreground: 0.95 0.01 140;
+    --popover: 0.16 0.018 145;
+    --popover-foreground: 0.95 0.01 140;
+    --primary: 0.62 0.22 145;
+    --primary-foreground: 0.1 0.015 145;
+    --secondary: 0.2 0.025 145;
+    --secondary-foreground: 0.9 0.01 140;
+    --muted: 0.2 0.018 145;
+    --muted-foreground: 0.6 0.05 145;
+    --accent: 0.35 0.18 150;
+    --accent-foreground: 0.95 0.01 140;
+    --destructive: 0.58 0.24 25;
+    --destructive-foreground: 0.1 0 0;
+    --border: 0.24 0.025 145;
+    --input: 0.24 0.025 145;
+    --ring: 0.62 0.22 145;
+    --chart-1: 0.52 0.24 145;
+    --chart-2: 0.58 0.22 120;
+    --chart-3: 0.48 0.2 170;
+    --chart-4: 0.63 0.26 90;
+    --chart-5: 0.43 0.24 200;
+    --sidebar: 0.12 0.015 145;
+    --sidebar-foreground: 0.95 0.01 140;
+    --sidebar-primary: 0.62 0.22 145;
+    --sidebar-primary-foreground: 0.1 0.015 145;
+    --sidebar-accent: 0.2 0.025 145;
+    --sidebar-accent-foreground: 0.9 0.01 140;
+    --sidebar-border: 0.24 0.025 145;
+    --sidebar-ring: 0.62 0.22 145;
+  }
+
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Satoshi", sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Cabinet Grotesk", sans-serif;
+  }
+}
+
+/* Truck animation for pickup tracker */
+@keyframes truck-move {
+  0% {
+    left: 5%;
+  }
+  100% {
+    left: 75%;
+  }
+}
+
+@keyframes pulse-dot {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.3);
+    opacity: 0.7;
+  }
+}
+
+.truck-animate {
+  animation: truck-move 3s ease-in-out infinite alternate;
+  position: absolute;
+}
+
+.pulse-dot {
+  animation: pulse-dot 2s ease-in-out infinite;
+}
